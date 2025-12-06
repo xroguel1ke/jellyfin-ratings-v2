@@ -21,6 +21,10 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Build Release
+        env:
+          # FIX: Diese Umgebungsvariable erzwingt die Erlaubnis für HTTP-Quellen,
+          # wodurch der NU1302 Fehler umgangen wird (finaler Fix).
+          DOTNET_NUGET_ALLOW_INSECURE_HTTP_SOURCES: 1
         run: dotnet build --configuration Release
 
       - name: Prepare Release ZIP (Deterministic)
