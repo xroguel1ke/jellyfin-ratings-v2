@@ -7,7 +7,7 @@
   "versions": [
     {
       "name": "Jellyfin Ratings",
-      "version": "1.0.8.0",
+      "version": "1.0.9.0",
       "description": "Adds MDbList ratings from multiple sources (IMDB, TMDb, Trakt, Letterboxd, etc.) to your Jellyfin interface.",
       "guid": "5c421e42-1815-46a0-bc66-cc39efb92c42",
       "dll": "Jellyfin.Plugin.Ratings.dll",
