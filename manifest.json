@@ -9,11 +9,11 @@
     "imageUrl": "https://raw.githubusercontent.com/xroguel1ke/jellyfin-ratings-v2/main/thumb.png",
     "versions": [
       {
-        "version": "1.0.7.0",
-        "changelog": "Fix: Critical checksum issue for installation and localization.",
+        "version": "1.0.8.0",
+        "changelog": "Fix: Final checksum sync for successful installation.",
         "targetAbi": "10.9.0.0",
-        "sourceUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.0.7/jellyfin-ratings.zip",
-        "checksum": "72f0733b265bd99daddbfce0e241e3ec",
+        "sourceUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.0.8/jellyfin-ratings.zip",
+        "checksum": "CE3B05BC7A175D909CBC2098C1C34B43",
         "timestamp": "2025-12-06T00:00:00Z"
       }
     ]
