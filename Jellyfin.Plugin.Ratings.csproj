@@ -2,24 +2,38 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>Jellyfin Ratings</AssemblyTitle>
+    <Company>Yannick</Company>
+    <Product>Jellyfin Ratings Plugin</Product>
+    <Description>Displays ratings from MDBList directly within Jellyfin.</Description>
     <Version>1.0.9</Version>
-    <Company>mdblist.com</Company>
-    <Product>Jellyfin Ratings</Product>
+    <Authors>Yannick</Authors>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <RestoreSources>
+      $(RestoreSources);
+      https://api.nuget.org/v3/index.json;
+      http://nuget.emby.media/api/v3/index.json;
+    </RestoreSources>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jellyfin.Common" Version="10.8.13" />
-    <PackageReference Include="Jellyfin.Model" Version="10.8.13" />
-    <PackageReference Include="Jellyfin.Server.Implementations" Version="10.8.13" />
-    <PackageReference Include="MediaBrowser.Common" Version="10.8.13" />
-    <PackageReference Include="MediaBrowser.Controller" Version="10.8.13" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Configuration\configPage.html" />
+    <PackageReference Include="Jellyfin.Model" Version="10.10.0" />
+    <PackageReference Include="Jellyfin.Controller" Version="10.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="ratings.js" />
+    <EmbeddedResource Include="Configuration\configPage.html" />
   </ItemGroup>
 
 </Project>
