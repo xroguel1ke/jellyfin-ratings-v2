@@ -12,14 +12,6 @@
     <Authors>Yannick</Authors>
   </PropertyGroup>
   
-  <PropertyGroup>
-    <RestoreSources>
-      $(RestoreSources);
-      https://api.nuget.org/v3/index.json;
-      http://nuget.emby.media/api/v3/index.json;
-    </RestoreSources>
-  </PropertyGroup>
-
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
