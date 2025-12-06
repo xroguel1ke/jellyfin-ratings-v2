@@ -1,0 +1,20 @@
+[
+  {
+    "guid": "93A5D7C8-2F1E-4B0A-9C3D-5E7F1A2B4C6D",
+    "name": "Jellyfin Ratings",
+    "description": "Zeigt Ratings von MDBList (IMDb, MAL, Rotten Tomatoes etc.) direkt in Jellyfin an.",
+    "overview": "Erweitertes Rating-Plugin mit MDBList Integration.",
+    "owner": "Yannick",
+    "category": "Metadata",
+    "versions": [
+      {
+        "version": "1.0.1.0",
+        "changelog": "Initial Release: Externe JS-Einbindung via CDN",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.0.1/jellyfin-ratings.zip",
+        "checksum": "00000000000000000000000000000000",
+        "timestamp": "2025-12-06T00:00:00Z"
+      }
+    ]
+  }
+]
