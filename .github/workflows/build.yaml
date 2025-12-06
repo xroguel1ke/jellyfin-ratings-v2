@@ -23,14 +23,14 @@ jobs:
       - name: Build Release
         run: dotnet build --configuration Release
 
-      - name: Prepare Release ZIP
+      - name: Prepare Release ZIP (Deterministic)
         run: |
           mkdir release
-          # Kopiert die fertige DLL in den release-Ordner
+          # Kopiert die fertige DLL in den release-ordner
           cp bin/Release/net8.0/Jellyfin.Plugin.Ratings.dll release/
           cd release
-          # Zippt den Inhalt
-          zip -r jellyfin-ratings.zip .
+          # FIX: Zippt den Inhalt DETERMINISTISCH (-X schließt Metadaten/Zeitstempel aus)
+          zip -rX jellyfin-ratings.zip .
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
