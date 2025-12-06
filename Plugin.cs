@@ -21,9 +21,8 @@ namespace Jellyfin.Plugin.Ratings
         public override string Name => "Jellyfin Ratings";
         public override Guid Id => Guid.Parse("93A5D7C8-2F1E-4B0A-9C3D-5E7F1A2B4C6D"); // A unique ID
 
-        // FIX: Explicitly override the version property to ensure it displays correctly in the dashboard
-        // Otherwise, it might fallback to 0.0.0.0 in some environments
-        public override Version Version => new Version(1, 0, 3);
+        // FIX: Die manuelle Version-Überschreibung wurde entfernt.
+        // Die Version wird jetzt automatisch aus der .csproj Datei genommen.
 
         // (Optional) This is required for the HTML settings page in the dashboard
         public IEnumerable<PluginPageInfo> GetPages()
