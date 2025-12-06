@@ -13,7 +13,7 @@
         "changelog": "Fix: Final checksum sync for successful installation.",
         "targetAbi": "10.9.0.0",
         "sourceUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.0.8/jellyfin-ratings.zip",
-        "checksum": "CE3B05BC7A175D909CBC2098C1C34B43",
+        "checksum": "0689EA0E45DA052C7ED59E8B42F927B7",
         "timestamp": "2025-12-06T00:00:00Z"
       }
     ]
