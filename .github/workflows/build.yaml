@@ -3,7 +3,10 @@ name: Build Jellyfin Plugin
 on:
   push:
     tags:
-      - 'v*' # Startet nur, wenn du einen Tag wie v1.0.0 pushst
+      - 'v*' # Startet nur bei Tags wie v1.0.0
+
+permissions:
+  contents: write # WICHTIG: Erlaubt dem Roboter das Hochladen von Releases
 
 jobs:
   build:
@@ -23,10 +26,10 @@ jobs:
       - name: Prepare Release ZIP
         run: |
           mkdir release
-          # Wir kopieren die DLL aus dem Build-Ordner
+          # Kopiert die fertige DLL in den release-Ordner
           cp bin/Release/net8.0/Jellyfin.Plugin.Ratings.dll release/
           cd release
-          # Zippen (ohne die ratings.js, da wir die ja extern laden wollen!)
+          # Zippt den Inhalt
           zip -r jellyfin-ratings.zip .
 
       - name: Create Release
