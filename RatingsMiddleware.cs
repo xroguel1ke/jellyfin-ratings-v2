@@ -69,8 +69,9 @@ namespace Jellyfin.Plugin.Ratings
                     // Aber da wir oben "Accept-Encoding" entfernt haben, SOLLTE es Text sein.
                     var responseText = await new StreamReader(responseBody).ReadToEndAsync();
 
-                    // Einfügen des Scripts
-                    var scriptTag = "<script src=\"/Plugins/Jellyfin.Plugin.Ratings/ratings.js\" defer></script>";
+                    // Einfügen des Scripts via externem CDN (GitHub Hotlink)
+                    // HIER IST DIE ÄNDERUNG:
+                    var scriptTag = "<script src=\"https://cdn.jsdelivr.net/gh/xroguel1ke/jellyfin-ratings-v2@main/ratings.js\" defer></script>";
 
                     if (responseText.Contains("</body>") && !responseText.Contains("ratings.js"))
                     {
