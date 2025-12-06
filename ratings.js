@@ -64,7 +64,7 @@ const PALETTE_NAMES = {
     mg:     ['Emerald', 'Leaf Green', 'Forest', 'Mint']
 };
 
-const ICON_BASE = 'https://raw.githubusercontent.com/xroguel1ke/jellyfin_ratings/refs/heads/main/assets/icons';
+const ICON_BASE = 'https://raw.githubusercontent.com/xroguel1ke/jellyfin-ratings-v2/refs/heads/main/assets/icons';
 const LOGO = {
     master: `${ICON_BASE}/master.png`, imdb: `${ICON_BASE}/IMDb.png`, tmdb: `${ICON_BASE}/TMDB.png`,
     trakt: `${ICON_BASE}/Trakt.png`, letterboxd: `${ICON_BASE}/letterboxd.png`, anilist: `${ICON_BASE}/anilist.png`,
