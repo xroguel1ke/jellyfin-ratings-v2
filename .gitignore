@@ -1,0 +1,14 @@
+# Ignoriere Build-Ordner (Groß-/Kleinschreibung egal)
+[Bb]in/
+[Oo]bj/
+
+# Ignoriere temporäre Dateien von VS Code / Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Ignoriere fertige Dateien
+*.dll
+*.pdb
+*.zip

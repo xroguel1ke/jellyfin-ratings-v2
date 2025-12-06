@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jellyfin Ratings</title>
+</head>
+<body>
+    <div id="JellyfinRatingsPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-input,emby-button">
+        <div data-role="content">
+            <div class="content-primary">
+                
+                <h1>Jellyfin Ratings Einstellungen</h1>
+                
+                <div class="inputContainer">
+                    <label class="inputLabel" for="MdblistApiKeyInput" style="margin-bottom: 5px;">MDBList API Key</label>
+                    <input id="MdblistApiKeyInput" type="text" class="emby-input" autocomplete="off" />
+                    <div class="fieldDescription">
+                        Trage hier deinen API Key von mdblist.com ein. (Drücke Speichern, um "DEIN-API-KEY" zu überschreiben)
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <button id="btnSaveRatingsConfig" type="button" class="raised emby-button button-submit block">
+                        <span>Speichern</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            // Scoping durch IIFE, damit keine Variablen global herumliegen
+            (function() {
+                var pluginId = '93A5D7C8-2F1E-4B0A-9C3D-5E7F1A2B4C6D';
+                var pageId = '#JellyfinRatingsPage';
+
+                // Funktion zum Laden
+                function loadConfig(page) {
+                    console.log('[RatingsPlugin] Lade Konfiguration...');
+                    Dashboard.showLoadingMsg();
+                    
+                    ApiClient.getPluginConfiguration(pluginId).then(function (config) {
+                        var key = config.MdblistApiKey || "";
+                        console.log('[RatingsPlugin] Aktueller Key in DB:', key);
+                        
+                        var input = page.querySelector('#MdblistApiKeyInput');
+                        if (input) {
+                            input.value = key;
+                            input.disabled = false; // Zwingend aktivieren
+                            input.removeAttribute('readonly');
+                        }
+                        
+                        Dashboard.hideLoadingMsg();
+                    });
+                }
+
+                // Funktion zum Speichern
+                function saveConfig(page) {
+                    console.log('[RatingsPlugin] Speichere...');
+                    Dashboard.showLoadingMsg();
+                    
+                    var input = page.querySelector('#MdblistApiKeyInput');
+                    var newKey = input ? input.value : "";
+
+                    ApiClient.getPluginConfiguration(pluginId).then(function (config) {
+                        config.MdblistApiKey = newKey;
+                        
+                        ApiClient.updatePluginConfiguration(pluginId, config).then(function (result) {
+                            console.log('[RatingsPlugin] Gespeichert!');
+                            Dashboard.processPluginConfigurationUpdateResult(result);
+                        });
+                    });
+                }
+
+                // Event Listener registrieren
+                // Wir suchen das Element direkt, da das Script "inline" ausgeführt wird
+                var pageElement = document.querySelector(pageId);
+                
+                if (pageElement) {
+                    // Beim Anzeigen der Seite
+                    pageElement.addEventListener('pageshow', function() {
+                        loadConfig(pageElement);
+                    });
+
+                    // Beim Klicken des Buttons
+                    var btn = pageElement.querySelector('#btnSaveRatingsConfig');
+                    if (btn) {
+                        btn.addEventListener('click', function() {
+                            saveConfig(pageElement);
+                        });
+                    }
+                } else {
+                    console.error('[RatingsPlugin] Konnte Seite nicht finden!');
+                }
+            })();
+        </script>
+    </div>
+</body>
+</html>
