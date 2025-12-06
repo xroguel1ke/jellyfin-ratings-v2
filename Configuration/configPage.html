@@ -8,19 +8,19 @@
         <div data-role="content">
             <div class="content-primary">
                 
-                <h1>Jellyfin Ratings Einstellungen</h1>
+                <h1>Jellyfin Ratings Settings</h1>
                 
                 <div class="inputContainer">
                     <label class="inputLabel" for="MdblistApiKeyInput" style="margin-bottom: 5px;">MDBList API Key</label>
                     <input id="MdblistApiKeyInput" type="text" class="emby-input" autocomplete="off" />
                     <div class="fieldDescription">
-                        Trage hier deinen API Key von mdblist.com ein. (Drücke Speichern, um "DEIN-API-KEY" zu überschreiben)
+                        Enter your MDBList API Key here. (Click Save to apply changes)
                     </div>
                 </div>
 
                 <div style="margin-top: 20px;">
                     <button id="btnSaveRatingsConfig" type="button" class="raised emby-button button-submit block">
-                        <span>Speichern</span>
+                        <span>Save</span>
                     </button>
                 </div>
 
@@ -28,24 +28,24 @@
         </div>
 
         <script type="text/javascript">
-            // Scoping durch IIFE, damit keine Variablen global herumliegen
+            // Scoping via IIFE to avoid global variables
             (function() {
                 var pluginId = '93A5D7C8-2F1E-4B0A-9C3D-5E7F1A2B4C6D';
                 var pageId = '#JellyfinRatingsPage';
 
-                // Funktion zum Laden
+                // Function to load config
                 function loadConfig(page) {
-                    console.log('[RatingsPlugin] Lade Konfiguration...');
+                    console.log('[RatingsPlugin] Loading configuration...');
                     Dashboard.showLoadingMsg();
                     
                     ApiClient.getPluginConfiguration(pluginId).then(function (config) {
                         var key = config.MdblistApiKey || "";
-                        console.log('[RatingsPlugin] Aktueller Key in DB:', key);
+                        console.log('[RatingsPlugin] Current key in DB:', key);
                         
                         var input = page.querySelector('#MdblistApiKeyInput');
                         if (input) {
                             input.value = key;
-                            input.disabled = false; // Zwingend aktivieren
+                            input.disabled = false; // Force enable
                             input.removeAttribute('readonly');
                         }
                         
@@ -53,9 +53,9 @@
                     });
                 }
 
-                // Funktion zum Speichern
+                // Function to save config
                 function saveConfig(page) {
-                    console.log('[RatingsPlugin] Speichere...');
+                    console.log('[RatingsPlugin] Saving...');
                     Dashboard.showLoadingMsg();
                     
                     var input = page.querySelector('#MdblistApiKeyInput');
@@ -65,23 +65,23 @@
                         config.MdblistApiKey = newKey;
                         
                         ApiClient.updatePluginConfiguration(pluginId, config).then(function (result) {
-                            console.log('[RatingsPlugin] Gespeichert!');
+                            console.log('[RatingsPlugin] Saved!');
                             Dashboard.processPluginConfigurationUpdateResult(result);
                         });
                     });
                 }
 
-                // Event Listener registrieren
-                // Wir suchen das Element direkt, da das Script "inline" ausgeführt wird
+                // Register Event Listeners
+                // We look for the element directly since the script is executed inline
                 var pageElement = document.querySelector(pageId);
                 
                 if (pageElement) {
-                    // Beim Anzeigen der Seite
+                    // On page show
                     pageElement.addEventListener('pageshow', function() {
                         loadConfig(pageElement);
                     });
 
-                    // Beim Klicken des Buttons
+                    // On button click
                     var btn = pageElement.querySelector('#btnSaveRatingsConfig');
                     if (btn) {
                         btn.addEventListener('click', function() {
@@ -89,7 +89,7 @@
                         });
                     }
                 } else {
-                    console.error('[RatingsPlugin] Konnte Seite nicht finden!');
+                    console.error('[RatingsPlugin] Could not find page!');
                 }
             })();
         </script>
