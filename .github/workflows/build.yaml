@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write # WICHTIG: Erlaubt dem Roboter das Hochladen von Releases
 
+env:
+  # FINAL FIX: Diese Umgebungsvariable global setzen, um NU1302 zu umgehen.
+  DOTNET_NUGET_ALLOW_INSECURE_HTTP_SOURCES: 1
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,10 +25,6 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Build Release
-        env:
-          # FIX: Diese Umgebungsvariable erzwingt die Erlaubnis für HTTP-Quellen,
-          # wodurch der NU1302 Fehler umgangen wird (finaler Fix).
-          DOTNET_NUGET_ALLOW_INSECURE_HTTP_SOURCES: 1
         run: dotnet build --configuration Release
 
       - name: Prepare Release ZIP (Deterministic)
