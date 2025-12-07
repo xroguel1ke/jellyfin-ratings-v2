@@ -8,7 +8,7 @@
     <Company>Yannick</Company>
     <Product>Jellyfin Ratings Plugin</Product>
     <Description>Displays ratings from MDBList directly within Jellyfin.</Description>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <Authors>Yannick</Authors>
   </PropertyGroup>
 

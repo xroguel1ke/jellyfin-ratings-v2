@@ -19,7 +19,7 @@ namespace Jellyfin.Plugin.Ratings
         }
 
         public override string Name => "Jellyfin Ratings";
-        public override Guid Id => Guid.Parse("93A5D7C8-2F1E-4B0A-9C3D-5E7F1A2B4C6D"); // A unique ID
+        public override Guid Id => Guid.Parse("A8972C41-7A69-4F5B-B3C8-E0D9F7C4B1A6"); // A unique ID
 
         // FIX: Die manuelle Version-Überschreibung wurde entfernt.
         // Die Version wird jetzt automatisch aus der .csproj Datei genommen.
