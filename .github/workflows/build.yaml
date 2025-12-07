@@ -22,7 +22,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 9.0.x # WICHTIG: Aktualisiert auf .NET 9.0
 
       - name: Build Release
         run: dotnet build --configuration Release
@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir release
           # Kopiert die fertige DLL in den release-ordner
-          cp bin/Release/net8.0/Jellyfin.Plugin.Ratings.dll release/
+          cp bin/Release/net9.0/Jellyfin.Plugin.Ratings.dll release/
           cd release
           # FIX: Zippt den Inhalt DETERMINISTISCH (-X schließt Metadaten/Zeitstempel aus)
           zip -rX jellyfin-ratings.zip .

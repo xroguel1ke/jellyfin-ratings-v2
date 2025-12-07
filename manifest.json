@@ -31,11 +31,11 @@
     "owner": "xroguel1ke",
     "guid": "A8972C41-7A69-4F5B-B3C8-E0D9F7C4B1A6",
     "category": "Metadata",
-    "version": "1.1.3.0",
-    "description": "Final fix: Update package dependencies to 10.11.4 for server compatibility.",
+    "version": "1.1.4.0",
+    "description": "Final fix: Update target framework to .NET 9.0 for Jellyfin 10.11.4 compatibility.",
     "dll": "Jellyfin.Plugin.Ratings.dll",
     "image": "https://raw.githubusercontent.com/xroguel1ke/jellyfin-ratings-v2/main/assets/master_rating.png",
-    "downloadUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.1.3/jellyfin-ratings.zip",
+    "downloadUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.1.4/jellyfin-ratings.zip",
     "checksum": "[HASH_HIER_EINSETZEN]"
   }
 ]
