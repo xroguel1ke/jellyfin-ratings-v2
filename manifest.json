@@ -16,13 +16,13 @@
       "checksum": "c2b0c34538d58c0c45582f6412e2f3a7"
     },
     {
-      "name": "Jellyfin Ratings (Icon URL Fix)",
-      "version": "1.0.9.0",
-      "description": "Fixes the icon URL for external ratings and includes a deterministic build fix to prevent future checksum errors.",
+      "name": "Jellyfin Ratings (Stable Build)",
+      "version": "1.1.0.0",
+      "description": "Fixes the icon URL, switches to a secure NuGet feed, and stabilizes the build process.",
       "guid": "5c421e42-1815-46a0-bc66-cc39efb92c42",
       "dll": "Jellyfin.Plugin.Ratings.dll",
       "image": "https://raw.githubusercontent.com/xroguel1ke/jellyfin-ratings-v2/main/assets/master_rating.png",
-      "downloadUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.0.9/jellyfin-ratings.zip",
+      "downloadUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.1.0/jellyfin-ratings.zip",
       "checksum": "[HASH_HIER_EINSETZEN]"
     }
   ]
