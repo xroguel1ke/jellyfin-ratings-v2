@@ -36,6 +36,6 @@
     "dll": "Jellyfin.Plugin.Ratings.dll",
     "image": "https://raw.githubusercontent.com/xroguel1ke/jellyfin-ratings-v2/main/assets/master_rating.png",
     "downloadUrl": "https://github.com/xroguel1ke/jellyfin-ratings-v2/releases/download/v1.1.1/jellyfin-ratings.zip",
-    "checksum": "[HASH_HIER_EINSETZEN]"
+    "checksum": "1949cf3089236b888a0f0cdae983bb9c"
   }
 ]
