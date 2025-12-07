@@ -11,7 +11,7 @@
     <Version>1.0.9</Version>
     <Authors>Yannick</Authors>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
